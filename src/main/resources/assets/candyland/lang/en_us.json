@@ -1,0 +1,18 @@
+{
+  "item.candyland.red_candy": "Candy",
+  "item.candyland.yellow_candy": "Candy",
+  "item.candyland.green_candy": "Candy",
+  "item.candyland.blue_candy": "Candy",
+  "item.candyland.lollipop": "Lollipop",
+  "item.candyland.dia_eme_alloy": "Diamond Emerald Alloy",
+  "item.candyland.candium": "Candium",
+  "item.candyland.candy_gunpowder": "ExplodingCandyPowder",
+
+  "block.candyland.green_gift_box": "Gift Box",
+  "block.candyland.blue_gift_box": "Gift Box",
+  "block.candyland.red_gift_box": "Gift Box",
+  "block.candyland.yellow_gift_box": "Gift Box",
+  "block.candyland.candy_ore": "Candy Ore",
+  "block.candyland.deepslate_candy_ore": "Deepslate Candy Ore",
+  "block.candyland.candy_mob_extractor": "Candy Extractor"
+}
