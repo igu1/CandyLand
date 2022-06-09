@@ -2,6 +2,7 @@ package me.ez.candyland.Init;
 
 import me.ez.candyland.Common.Block.GiftBox;
 import me.ez.candyland.Common.BlockEntities.CandyMobExtractorBlock;
+import me.ez.candyland.Common.CandyBush.AbstractCandyBush;
 import me.ez.candyland.Main;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -97,6 +98,11 @@ public class Blockinit {
             "candy_mob_extractor",
             () -> new CandyMobExtractorBlock(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+    public static final RegistryObject<AbstractCandyBush> CANDY_BUSH = registerBlock(
+            "candy_bush",
+            () -> new AbstractCandyBush(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH)),
+            CreativeModeTab.TAB_FOOD);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> supplier, CreativeModeTab tab) {

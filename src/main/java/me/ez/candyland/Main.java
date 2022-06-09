@@ -32,10 +32,10 @@ public class Main
         @SubscribeEvent
         public static void clientSetup(FMLClientSetupEvent e){
             MenuScreens.register(ContainerInit.CANDY_EXTRACTOR.get(), CandyMobExtractorScreen::new);
-//            ItemBlockRenderTypes.setRenderLayer(Blockinit.BLUE_GIFT_BOX.get(), RenderType.cutout());
-//            ItemBlockRenderTypes.setRenderLayer(Blockinit.RED_GIFT_BOX.get(), RenderType.cutout());
-//            ItemBlockRenderTypes.setRenderLayer(Blockinit.GREEN_GIFT_BOX.get(), RenderType.cutout());
-//            ItemBlockRenderTypes.setRenderLayer(Blockinit.YELLOW_GIFT_BOX.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(Blockinit.BLUE_GIFT_BOX.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(Blockinit.RED_GIFT_BOX.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(Blockinit.GREEN_GIFT_BOX.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(Blockinit.YELLOW_GIFT_BOX.get(), RenderType.cutout());
 
         }
     }

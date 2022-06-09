@@ -12,13 +12,19 @@ import net.minecraftforge.registries.RegistryObject;
 public class Iteminit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MOD_ID);
 
-//    //Items
+    //Items
     public static final RegistryObject<Item> RED_CANDY = registerCandy("red_candy", 0.1f, 1);
-
+    public static final RegistryObject<Item> WHITE_CANDY = registerCandy("white_candy", 0.1f, 1);
+    public static final RegistryObject<Item> ORANGE_CANDY = registerCandy("orange_candy", 0.1f, 1);
+    public static final RegistryObject<Item> MAGENTA_CANDY = registerCandy("magenta_candy", 0.1f, 1);
+    public static final RegistryObject<Item> LIGHT_BLUE_CANDY = registerCandy("light_blue_candy", 0.1f, 1);
+    public static final RegistryObject<Item> LIME_CANDY = registerCandy("lime_candy", 0.1f, 1);
+    public static final RegistryObject<Item> PINK_CANDY = registerCandy("pink_candy", 0.1f, 1);
+    public static final RegistryObject<Item> CYAN_CANDY = registerCandy("cyan_candy", 0.1f, 1);
+    public static final RegistryObject<Item> PURPLE_CANDY = registerCandy("purple_candy", 0.1f, 1);
+    public static final RegistryObject<Item> BROWN_CANDY = registerCandy("brown_candy", 0.1f, 1);
     public static final RegistryObject<Item> GREEN_CANDY = registerCandy("green_candy", 0.1f, 1);
-
     public static final RegistryObject<Item> YELLOW_CANDY = registerCandy("yellow_candy", 0.1f, 1);
-
     public static final RegistryObject<Item> BLUE_CANDY = registerCandy("blue_candy", 0.1f, 1);
 
     public static final RegistryObject<Item> LOLLIPOP = registerCandy("lollipop", 0.2f, 2);

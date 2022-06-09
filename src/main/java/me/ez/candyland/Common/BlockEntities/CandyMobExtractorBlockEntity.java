@@ -33,13 +33,21 @@ public class CandyMobExtractorBlockEntity extends AbstractContainerBlockEntity {
 
     int ticker;
 
-    List<Item> candy = List.of(new Item[]{
+    List<Item> candy = List.of(
             Iteminit.BLUE_CANDY.get(),
             Iteminit.RED_CANDY.get(),
             Iteminit.YELLOW_CANDY.get(),
             Iteminit.GREEN_CANDY.get(),
-            Iteminit.LOLLIPOP.get()
-    });
+            Iteminit.LOLLIPOP.get(),
+            Iteminit.LIGHT_BLUE_CANDY.get(),
+            Iteminit.PURPLE_CANDY.get(),
+            Iteminit.WHITE_CANDY.get(),
+            Iteminit.BROWN_CANDY.get(),
+            Iteminit.ORANGE_CANDY.get(),
+            Iteminit.PINK_CANDY.get(),
+            Iteminit.CYAN_CANDY.get(),
+            Iteminit.LIME_CANDY.get(),
+            Iteminit.MAGENTA_CANDY.get());
 
 
     public static <T extends BlockEntity> void tickServer(Level lvl, BlockPos pos, BlockState blockstate, T t) {
