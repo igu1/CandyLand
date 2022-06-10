@@ -23,6 +23,8 @@ public class Main
         Iteminit.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         Blockinit.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        Blockinit.SIMPLE_BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+
         BlockEntityInit.BLOCKENTITY_TYPE.register(FMLJavaModLoadingContext.get().getModEventBus());
         ContainerInit.MENUTYPE_TYPE.register(FMLJavaModLoadingContext.get().getModEventBus());
         MinecraftForge.EVENT_BUS.register(this);

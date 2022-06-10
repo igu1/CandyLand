@@ -44,7 +44,7 @@ public class AbstractCandyBush extends SweetBerryBushBlock {
 
     @Override
     public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos, Player player) {
-        return null; //TODO
+        return Iteminit.COCO_BUSH_SEEDS.get().getDefaultInstance();
     }
 
     @Override

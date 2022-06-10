@@ -10,6 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class Iteminit {
+
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MOD_ID);
     public static final DeferredRegister<Item> CANDIES = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MOD_ID);
     //Items
@@ -48,11 +49,14 @@ public class Iteminit {
     public static final RegistryObject<Item> CANDIUM = ITEMS.register("candium",
             () -> new Item(new Item.Properties()
                     .rarity(Rarity.RARE)
-                    .tab(CreativeModeTab.TAB_MISC)));
+                    .tab(CreativeModeTab.TAB_MISC))); // RAREST ORE + GOLD = CANDIUM
 
     public static final RegistryObject<Item> CANDY_GUNPOWDER = ITEMS.register("candy_gunpowder",
             () -> new Item(new Item.Properties()
-                    .rarity(Rarity.UNCOMMON)
+                    .tab(CreativeModeTab.TAB_MISC))); //FROM CANDY CREEPER
+
+    public static final RegistryObject<Item> COCO_BUSH_SEEDS = ITEMS.register("coco_bush_seeds",
+            () -> new Item(new Item.Properties()
                     .tab(CreativeModeTab.TAB_MISC)));
 
 }
