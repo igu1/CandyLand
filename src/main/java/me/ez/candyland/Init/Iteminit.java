@@ -11,7 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class Iteminit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MOD_ID);
-
+    public static final DeferredRegister<Item> CANDIES = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MOD_ID);
     //Items
     public static final RegistryObject<Item> RED_CANDY = registerCandy("red_candy", 0.1f, 1);
     public static final RegistryObject<Item> WHITE_CANDY = registerCandy("white_candy", 0.1f, 1);
@@ -30,11 +30,11 @@ public class Iteminit {
     public static final RegistryObject<Item> LOLLIPOP = registerCandy("lollipop", 0.2f, 2);
 
     private static <T extends Item> RegistryObject<Item> registerCandy(String name, Float saturation, int nutrition){
-        return ITEMS.register(name, () -> new Item(new Item.Properties()
+        return CANDIES.register(name, () -> new Item(new Item.Properties()
                 .food(new FoodProperties.Builder()
                         .fast()
-                        .saturationMod(0.1F)
-                        .nutrition(1)
+                        .saturationMod(saturation)
+                        .nutrition(nutrition)
                         .build())
                 .tab(CreativeModeTab.TAB_FOOD)));
     }

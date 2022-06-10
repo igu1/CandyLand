@@ -99,10 +99,10 @@ public class Blockinit {
             () -> new CandyMobExtractorBlock(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<AbstractCandyBush> CANDY_BUSH = registerBlock(
-            "candy_bush",
-            () -> new AbstractCandyBush(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH)),
-            CreativeModeTab.TAB_FOOD);
+//    public static final RegistryObject<AbstractCandyBush> CANDY_BUSH = registerBlock(
+//            "candy_bush",
+//            () -> new AbstractCandyBush(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH)),
+//            CreativeModeTab.TAB_FOOD);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> supplier, CreativeModeTab tab) {

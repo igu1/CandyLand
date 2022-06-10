@@ -19,7 +19,9 @@ public class Main
 
     public Main()
     {
+        Iteminit.CANDIES.register(FMLJavaModLoadingContext.get().getModEventBus());
         Iteminit.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+
         Blockinit.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         BlockEntityInit.BLOCKENTITY_TYPE.register(FMLJavaModLoadingContext.get().getModEventBus());
         ContainerInit.MENUTYPE_TYPE.register(FMLJavaModLoadingContext.get().getModEventBus());
