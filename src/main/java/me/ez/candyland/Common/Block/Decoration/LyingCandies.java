@@ -10,9 +10,9 @@ import net.minecraft.world.item.Item;
 
 import java.util.List;
 
-public class LyingLollipopBlock extends Block {
+public class LyingCandies extends Block {
 
-    public LyingLollipopBlock(Properties properties) {
+    public LyingCandies(Properties properties) {
         super(properties);
     }
 

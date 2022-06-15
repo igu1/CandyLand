@@ -1,7 +1,8 @@
 package me.ez.candyland.Init;
 
 import me.ez.candyland.Common.Block.CandyTnt.CandyTnt;
-import me.ez.candyland.Common.Block.GiftBox;
+import me.ez.candyland.Common.Block.AbstractGiftBox;
+import me.ez.candyland.Common.Block.Decoration.LyingCandies;
 import me.ez.candyland.Common.BlockEntities.CandyMobExtractorBlock;
 import me.ez.candyland.Main;
 import net.minecraft.world.item.BlockItem;
@@ -20,100 +21,104 @@ import java.util.function.Supplier;
 public class Blockinit {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Main.MOD_ID);
 
-    public static final RegistryObject<Block> CANDY_ORE = registerBlock(
+    public static final RegistryObject<Block> CANDY_ORE = registerBlockWithItem(
             "candy_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<Block> DEEPSLATE_CANDY_ORE = registerBlock(
+    public static final RegistryObject<Block> DEEPSLATE_CANDY_ORE = registerBlockWithItem(
             "deepslate_candy_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
 
 
-    public static final RegistryObject<Block> CANDY_IRON_ORE = registerBlock(
+    public static final RegistryObject<Block> CANDY_IRON_ORE = registerBlockWithItem(
             "candy_iron_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<Block> DEEPSLATE_CANDY_IRON_ORE = registerBlock(
+    public static final RegistryObject<Block> DEEPSLATE_CANDY_IRON_ORE = registerBlockWithItem(
             "deepslate_candy_iron_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
 
 
-    public static final RegistryObject<Block> CANDY_GOLD_ORE = registerBlock(
+    public static final RegistryObject<Block> CANDY_GOLD_ORE = registerBlockWithItem(
             "candy_gold_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_ORE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<Block> DEEPSLATE_CANDY_GOLD_ORE = registerBlock(
+    public static final RegistryObject<Block> DEEPSLATE_CANDY_GOLD_ORE = registerBlockWithItem(
             "deepslate_candy_gold_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_GOLD_ORE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
 
 
-    public static final RegistryObject<Block> CANDY_DIAMOND_ORE = registerBlock(
+    public static final RegistryObject<Block> CANDY_DIAMOND_ORE = registerBlockWithItem(
             "candy_diamond_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<Block> DEEPSLATE_CANDY_DIAMOND_ORE = registerBlock(
+    public static final RegistryObject<Block> DEEPSLATE_CANDY_DIAMOND_ORE = registerBlockWithItem(
             "deepslate_candy_diamond_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<Block> CANDY_EMERALD_ORE = registerBlock(
+    public static final RegistryObject<Block> CANDY_EMERALD_ORE = registerBlockWithItem(
             "candy_emerald_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.EMERALD_ORE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<Block> DEEPSLATE_CANDY_EMERALD_ORE = registerBlock(
+    public static final RegistryObject<Block> DEEPSLATE_CANDY_EMERALD_ORE = registerBlockWithItem(
             "deepslate_candy_emerald_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_EMERALD_ORE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     //Gift Block
-    public static final RegistryObject<GiftBox> RED_GIFT_BOX = registerBlock(
+    public static final RegistryObject<AbstractGiftBox> RED_GIFT_BOX = registerBlockWithItem(
         "red_gift_box",
-        () -> new GiftBox(BlockBehaviour.Properties.of(Material.CAKE).instabreak()),
+        () -> new AbstractGiftBox(BlockBehaviour.Properties.of(Material.CAKE).instabreak()),
                 CreativeModeTab.TAB_MISC);
 
-    public static final RegistryObject<GiftBox> BLUE_GIFT_BOX = registerBlock(
+    public static final RegistryObject<AbstractGiftBox> BLUE_GIFT_BOX = registerBlockWithItem(
             "blue_gift_box",
-            () -> new GiftBox(BlockBehaviour.Properties.of(Material.CAKE)),
+            () -> new AbstractGiftBox(BlockBehaviour.Properties.of(Material.CAKE)),
             CreativeModeTab.TAB_MISC);
 
-    public static final RegistryObject<GiftBox> YELLOW_GIFT_BOX = registerBlock(
+    public static final RegistryObject<AbstractGiftBox> YELLOW_GIFT_BOX = registerBlockWithItem(
             "yellow_gift_box",
-            () -> new GiftBox(BlockBehaviour.Properties.of(Material.CAKE)),
+            () -> new AbstractGiftBox(BlockBehaviour.Properties.of(Material.CAKE)),
             CreativeModeTab.TAB_MISC);
 
-    public static final RegistryObject<GiftBox> GREEN_GIFT_BOX = registerBlock(
+    public static final RegistryObject<AbstractGiftBox> GREEN_GIFT_BOX = registerBlockWithItem(
             "green_gift_box",
-            () -> new GiftBox(BlockBehaviour.Properties.of(Material.CAKE)),
+            () -> new AbstractGiftBox(BlockBehaviour.Properties.of(Material.CAKE)),
             CreativeModeTab.TAB_MISC);
 
-    public static final RegistryObject<CandyMobExtractorBlock> CANDY_MOB_EXTRACTOR = registerBlock(
+    public static final RegistryObject<CandyMobExtractorBlock> CANDY_MOB_EXTRACTOR = registerBlockWithItem(
             "candy_mob_extractor",
             () -> new CandyMobExtractorBlock(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<CandyTnt> CANDY_TNT = registerBlock(
+
+    public static final RegistryObject<CandyTnt> CANDY_TNT = registerBlockWithItem(
             "candy_tnt",
             () -> new CandyTnt(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-//    public static final RegistryObject<AbstractCandyBush> COCO_CANDY_BUSH = BLOCKS.register(
-//            "coco_candy_bush",
-//            () -> new AbstractCandyBush(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH)));
+    public static final RegistryObject<LyingCandies> LYING_CANDIES =
+            registerBlock("lying_candies", () -> new LyingCandies(BlockBehaviour.Properties.of(Material.CAKE).instabreak().noCollission()));
 
-
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> supplier, CreativeModeTab tab) {
+    private static <T extends Block> RegistryObject<T> registerBlockWithItem(String name, Supplier<T> supplier, CreativeModeTab tab) {
         RegistryObject<T> block = BLOCKS.register(name, supplier);
         Iteminit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
         return block;
     }
+
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> supplier) {
+        return BLOCKS.register(name, supplier);
+    }
+
 
 
 }

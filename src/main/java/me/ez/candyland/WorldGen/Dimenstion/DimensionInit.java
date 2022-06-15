@@ -8,6 +8,8 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.DeferredRegister;
 
 public class DimensionInit {
-    public static ResourceKey<Level> CandyLand = ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation(Main.MOD_ID, "candy_land"));
+    public static ResourceKey<Level> CandyLand =
+            ResourceKey.create(Registry.DIMENSION_REGISTRY,
+                    new ResourceLocation(Main.MOD_ID, "candy_land"));
 
 }
