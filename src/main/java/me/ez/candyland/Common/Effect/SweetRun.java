@@ -13,13 +13,6 @@ import java.util.Random;
 
 public class SweetRun extends MobEffect {
 
-//    List<ItemStack> candies = List.of(new ItemStack[]{
-//            new ItemStack(Iteminit.BLUE_CANDY.get()),
-//            new ItemStack(Iteminit.RED_CANDY.get()),
-//            new ItemStack(Iteminit.YELLOW_CANDY.get()),
-//            new ItemStack(Iteminit.GREEN_CANDY.get()),
-//    });
-
     public SweetRun(MobEffectCategory category, int color) {
         super(category, color);
     }
@@ -31,8 +24,13 @@ public class SweetRun extends MobEffect {
             int y = entity.getBlockY();
             int z = entity.getBlockZ();
             Random r = new Random();
-
-//            entity.level.addFreshEntity(CreateItemEntity(candies.get(r.nextInt(0, candies.size())), x ,y , z, entity));
+            List<ItemStack> candies = List.of(
+            new ItemStack(Iteminit.BLUE_CANDY.get()),
+            new ItemStack(Iteminit.RED_CANDY.get()),
+            new ItemStack(Iteminit.YELLOW_CANDY.get()),
+            new ItemStack(Iteminit.GREEN_CANDY.get())
+                );
+            entity.level.addFreshEntity(CreateItemEntity(candies.get(r.nextInt(0, candies.size())), x ,y , z, entity));
         }
         super.applyEffectTick(entity, amp);
     }
