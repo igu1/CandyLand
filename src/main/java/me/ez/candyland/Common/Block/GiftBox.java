@@ -1,6 +1,9 @@
 package me.ez.candyland.Common.Block;
 
+import me.ez.candyland.Init.Iteminit;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -10,6 +13,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 import java.util.stream.Stream;
@@ -17,13 +21,31 @@ import java.util.stream.Stream;
 public class GiftBox extends Block {
 
 
-    private final Random rand = new Random();
-//    List<ItemStack> candies = List.of(new ItemStack[]{
-//            new ItemStack(Iteminit.BLUE_CANDY.get()),
-//            new ItemStack(Iteminit.RED_CANDY.get()),
-//            new ItemStack(Iteminit.YELLOW_CANDY.get()),
-//            new ItemStack(Iteminit.GREEN_CANDY.get()),
-//    });
+    private static final Random rand = new Random();
+
+    private static final List<ItemStack> gift_drops = List.of(
+//            new ItemStack(Iteminit.BLUE_CANDY.get(), rand.nextInt(7)),
+//            new ItemStack(Iteminit.RED_CANDY.get(),rand.nextInt(6)),
+//            new ItemStack(Iteminit.YELLOW_CANDY.get(),rand.nextInt(8)),
+//            new ItemStack(Iteminit.GREEN_CANDY.get(),rand.nextInt(7)),
+//            new ItemStack(Iteminit.CYAN_CANDY.get(), rand.nextInt(6)),
+//            new ItemStack(Iteminit.MAGENTA_CANDY.get(),rand.nextInt(5)),
+//            new ItemStack(Iteminit.LIGHT_BLUE_CANDY.get(),rand.nextInt(8)),
+//            new ItemStack(Iteminit.LIME_CANDY.get(),rand.nextInt(7)),
+//            new ItemStack(Iteminit.BROWN_CANDY.get(), rand.nextInt(6)),
+//            new ItemStack(Iteminit.WHITE_CANDY.get(),rand.nextInt(5)),
+//            new ItemStack(Iteminit.PINK_CANDY.get(),rand.nextInt(8)),
+//            new ItemStack(Iteminit.ORANGE_CANDY.get(),rand.nextInt(7)),
+//            new ItemStack(Iteminit.PURPLE_CANDY.get(), rand.nextInt(6)),
+//            new ItemStack(Iteminit.LOLLIPOP.get(), rand.nextInt(4)),
+//
+//            new ItemStack(Items.DIAMOND, rand.nextInt(2)),
+//            new ItemStack(Items.EMERALD, rand.nextInt(2)),
+//            new ItemStack(Items.GOLD_INGOT, rand.nextInt(3)),
+//            new ItemStack(Items.IRON_INGOT, rand.nextInt(5)),
+//            new ItemStack(Items.COAL, rand.nextInt(10)),
+//            new ItemStack(Iteminit.CANDY_GUNPOWDER.get(), rand.nextInt(4))
+            );
 
     public GiftBox(Properties properties) {
         super(properties);
@@ -50,10 +72,9 @@ public class GiftBox extends Block {
     }
 
     @Override
-    public void onRemove(BlockState p_60515_, Level level, BlockPos pos, BlockState p_60518_, boolean p_60519_) {
-        for (int x = 0; x < rand.nextInt(3, 8); x++){
-//            ItemEntity item = new ItemEntity(level, pos.gngfbngetX(), pos.getY(), pos.getZ(), candies.get(rand.nextInt(0, candies.size())));
-//            level.addFreshEntity(item);
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState state1, boolean p_60519_) {
+        for (int x = 0; x < rand.nextInt(4, 8); x++){
+            popResource(level, pos, gift_drops.get(rand.nextInt(0, gift_drops.size())));
         }
     }
 }

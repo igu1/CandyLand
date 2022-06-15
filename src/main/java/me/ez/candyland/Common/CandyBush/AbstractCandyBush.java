@@ -1,5 +1,6 @@
 package me.ez.candyland.Common.CandyBush;
 
+import me.ez.candyland.Init.Blockinit;
 import me.ez.candyland.Init.Iteminit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -44,7 +45,9 @@ public class AbstractCandyBush extends SweetBerryBushBlock {
 
     @Override
     public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos, Player player) {
-        return Iteminit.COCO_BUSH_SEEDS.get().getDefaultInstance();
+//        return Iteminit.COCO_CANDY_BUSH.get().getDefaultInstance();
+//                Blockinit.COCO_CANDY_BUSH.get().getCloneItemStack(state, target, level, pos, player);
+    return Iteminit.LOLLIPOP.get().getDefaultInstance();
     }
 
     @Override

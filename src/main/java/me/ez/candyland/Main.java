@@ -1,11 +1,12 @@
 package me.ez.candyland;
 
+import me.ez.candyland.Client.CandyTntEntityRenderer;
 import me.ez.candyland.Common.BlockEntities.CandyMobExtractorScreen;
 import me.ez.candyland.Init.*;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -16,21 +17,19 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class Main
 {
     public static final String MOD_ID = "candyland";
-
     public Main()
     {
         Iteminit.CANDIES.register(FMLJavaModLoadingContext.get().getModEventBus());
         Iteminit.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-
         Blockinit.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        Blockinit.SIMPLE_BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-
+        EntityInit.ENTITY.register(FMLJavaModLoadingContext.get().getModEventBus());
         BlockEntityInit.BLOCKENTITY_TYPE.register(FMLJavaModLoadingContext.get().getModEventBus());
+        AttributeInit.ATTRIBUTES.register(FMLJavaModLoadingContext.get().getModEventBus());
         ContainerInit.MENUTYPE_TYPE.register(FMLJavaModLoadingContext.get().getModEventBus());
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    @Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientSetup{
 
         @SubscribeEvent
@@ -41,6 +40,10 @@ public class Main
             ItemBlockRenderTypes.setRenderLayer(Blockinit.GREEN_GIFT_BOX.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(Blockinit.YELLOW_GIFT_BOX.get(), RenderType.cutout());
 
+        }
+        @SubscribeEvent
+        public static void registerRenderer(EntityRenderersEvent.RegisterRenderers entityRenderersEvent){
+            entityRenderersEvent.registerEntityRenderer(EntityInit.CANDY_TNT.get(), CandyTntEntityRenderer::new);
         }
     }
 

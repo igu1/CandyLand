@@ -1,7 +1,9 @@
 package me.ez.candyland.Init;
 
+import me.ez.candyland.Common.Food.SmallFood;
 import me.ez.candyland.Main;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -31,13 +33,7 @@ public class Iteminit {
     public static final RegistryObject<Item> LOLLIPOP = registerCandy("lollipop", 0.2f, 2);
 
     private static <T extends Item> RegistryObject<Item> registerCandy(String name, Float saturation, int nutrition){
-        return CANDIES.register(name, () -> new Item(new Item.Properties()
-                .food(new FoodProperties.Builder()
-                        .fast()
-                        .saturationMod(saturation)
-                        .nutrition(nutrition)
-                        .build())
-                .tab(CreativeModeTab.TAB_FOOD)));
+        return CANDIES.register(name, () -> new SmallFood(saturation, nutrition));
     }
 
 ////    Materials
@@ -55,8 +51,11 @@ public class Iteminit {
             () -> new Item(new Item.Properties()
                     .tab(CreativeModeTab.TAB_MISC))); //FROM CANDY CREEPER
 
-    public static final RegistryObject<Item> COCO_BUSH_SEEDS = ITEMS.register("coco_bush_seeds",
-            () -> new Item(new Item.Properties()
-                    .tab(CreativeModeTab.TAB_MISC)));
+
+    //Used BlockItem
+//    public static final RegistryObject<BlockItem> COCO_CANDY_BUSH = ITEMS.register(
+//            "coco_candy_bush",
+//            () -> new BlockItem(Blockinit.COCO_CANDY_BUSH.get(),
+//                    new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
 }
