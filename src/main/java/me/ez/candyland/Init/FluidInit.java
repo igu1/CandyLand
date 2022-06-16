@@ -26,7 +26,7 @@ public class FluidInit {
             .sound(SoundEvents.BUCKET_FILL, SoundEvents.BUCKET_EMPTY)
             .overlay(new ResourceLocation("block/water_overlay"))
 //            .color(0x873814)
-                    .color(0xbffcba03)
+                    .color(0xbf7A2E14)
             )
             .levelDecreasePerBlock(2)
             .slopeFindDistance(2)

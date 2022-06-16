@@ -5,12 +5,15 @@ import me.ez.candyland.Common.Block.ClientBlockRenderingEvent;
 import me.ez.candyland.Common.BlockEntities.BlockEntityScreenRender;
 import me.ez.candyland.Common.BlockEntities.CandyMobExtractor.CandyMobExtractorScreen;
 import me.ez.candyland.Common.Fluids.FluidRenderLayer;
+import me.ez.candyland.Events.AttributeEvents;
 import me.ez.candyland.Init.*;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -35,7 +38,7 @@ public class Main
     }
 
     @Mod.EventBusSubscriber(modid = Main.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class ClientSetup{
+    public static class CallEvents {
 
         @SubscribeEvent
         public static void clientSetup(FMLClientSetupEvent e){
@@ -47,6 +50,16 @@ public class Main
         @SubscribeEvent
         public static void registerRenderer(EntityRenderersEvent.RegisterRenderers entityRenderersEvent){
             entityRenderersEvent.registerEntityRenderer(MiscEntityInit.CANDY_TNT.get(), CandyTntEntityRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void AttributeCreation(EntityAttributeCreationEvent e){
+            AttributeEvents.registerAttributeForOurEntity(e);
+        }
+
+        @SubscribeEvent
+        public static void AttributeModification(EntityAttributeModificationEvent e){
+            AttributeEvents.registerAttribute(e);
         }
     }
 }

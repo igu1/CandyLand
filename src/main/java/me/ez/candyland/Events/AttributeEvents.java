@@ -20,7 +20,6 @@ public class AttributeEvents {
     @SubscribeEvent
     public static void registerAttributeForOurEntity(EntityAttributeCreationEvent e){
         System.out.println("Creating Attributes");
-        // For Our Own Entity
         e.put(LivingEntityInit.CANDY_COW.get(), CandyCow.createAttributes().build());
     }
 }
