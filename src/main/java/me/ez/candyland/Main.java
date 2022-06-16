@@ -1,7 +1,10 @@
 package me.ez.candyland;
 
 import me.ez.candyland.Client.CandyTntEntityRenderer;
-import me.ez.candyland.Common.BlockEntities.CandyMobExtractorScreen;
+import me.ez.candyland.Common.Block.ClientBlockRenderingEvent;
+import me.ez.candyland.Common.BlockEntities.BlockEntityScreenRender;
+import me.ez.candyland.Common.BlockEntities.CandyMobExtractor.CandyMobExtractorScreen;
+import me.ez.candyland.Common.Fluids.FluidRenderLayer;
 import me.ez.candyland.Init.*;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -22,10 +25,12 @@ public class Main
         Iteminit.CANDIES.register(FMLJavaModLoadingContext.get().getModEventBus());
         Iteminit.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         Blockinit.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        EntityInit.ENTITY.register(FMLJavaModLoadingContext.get().getModEventBus());
+        MiscEntityInit.ENTITY.register(FMLJavaModLoadingContext.get().getModEventBus());
         BlockEntityInit.BLOCKENTITY_TYPE.register(FMLJavaModLoadingContext.get().getModEventBus());
         AttributeInit.ATTRIBUTES.register(FMLJavaModLoadingContext.get().getModEventBus());
         ContainerInit.MENUTYPE_TYPE.register(FMLJavaModLoadingContext.get().getModEventBus());
+        LivingEntityInit.ENTITY.register(FMLJavaModLoadingContext.get().getModEventBus());
+        FluidInit.FLUIDS.register(FMLJavaModLoadingContext.get().getModEventBus());
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -34,17 +39,14 @@ public class Main
 
         @SubscribeEvent
         public static void clientSetup(FMLClientSetupEvent e){
-            MenuScreens.register(ContainerInit.CANDY_EXTRACTOR.get(), CandyMobExtractorScreen::new);
-            ItemBlockRenderTypes.setRenderLayer(Blockinit.BLUE_GIFT_BOX.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(Blockinit.RED_GIFT_BOX.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(Blockinit.GREEN_GIFT_BOX.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(Blockinit.YELLOW_GIFT_BOX.get(), RenderType.cutout());
-
+            BlockEntityScreenRender.screenRender(e);
+            ClientBlockRenderingEvent.clientRenderingForBlock(e);
+            FluidRenderLayer.renderFluidLayer(e);
         }
+
         @SubscribeEvent
         public static void registerRenderer(EntityRenderersEvent.RegisterRenderers entityRenderersEvent){
-            entityRenderersEvent.registerEntityRenderer(EntityInit.CANDY_TNT.get(), CandyTntEntityRenderer::new);
+            entityRenderersEvent.registerEntityRenderer(MiscEntityInit.CANDY_TNT.get(), CandyTntEntityRenderer::new);
         }
     }
-
 }

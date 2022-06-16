@@ -17,5 +17,6 @@ public class DataGenerator {
 
         generator.addProvider(new BlockStateProvider(generator, helper));
         generator.addProvider(new ItemProvider(generator, helper));
+        generator.addProvider(new LanguageProvider(generator, "en_us"));
     }
 }

@@ -1,4 +1,4 @@
-package me.ez.candyland.Common.BlockEntities;
+package me.ez.candyland.Common.BlockEntities.CandyMobExtractor;
 
 import me.ez.candyland.Common.AbstractContainerBlockEntity.AbstractBlockEntityContainer;
 import me.ez.candyland.Init.Blockinit;

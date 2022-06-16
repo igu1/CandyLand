@@ -17,8 +17,13 @@ public class ItemProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         Iteminit.CANDIES.getEntries().forEach(item -> simpleItem(item.get()));
-//        Iteminit.ITEMS.getEntries().forEach(item -> simpleItem(item.get()));
+        simpleItem(Iteminit.CHOCOLATE_BUCKET.get());
+
+
     }
+
+
+
     private ItemModelBuilder simpleItem(Item item){
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated"))

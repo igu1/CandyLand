@@ -14,5 +14,6 @@
   "block.candyland.yellow_gift_box": "Gift Box",
   "block.candyland.candy_ore": "Candy Ore",
   "block.candyland.deepslate_candy_ore": "Deepslate Candy Ore",
-  "block.candyland.candy_mob_extractor": "Candy Extractor"
+  "block.candyland.candy_mob_extractor": "Candy Extractor",
+  "item.candyland.chocolate_bucket": "Chocolate Bucket"
 }

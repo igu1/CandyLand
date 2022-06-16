@@ -1,15 +1,17 @@
 package me.ez.candyland.Init;
 
-import me.ez.candyland.Common.Block.CandyTnt.CandyTnt;
 import me.ez.candyland.Common.Block.AbstractGiftBox;
+import me.ez.candyland.Common.Block.CandyTnt.CandyTnt;
 import me.ez.candyland.Common.Block.Decoration.LyingCandies;
-import me.ez.candyland.Common.BlockEntities.CandyMobExtractorBlock;
+import me.ez.candyland.Common.BlockEntities.CandyMobExtractor.CandyMobExtractorBlock;
+import me.ez.candyland.Common.Fluids.ChocolateFluid;
 import me.ez.candyland.Main;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.DeferredRegister;
@@ -95,26 +97,35 @@ public class Blockinit {
             () -> new AbstractGiftBox(BlockBehaviour.Properties.of(Material.CAKE)),
             CreativeModeTab.TAB_MISC);
 
+    public static final RegistryObject<CandyTnt> CANDY_TNT = registerBlockWithItem(
+            "candy_tnt",
+            () -> new CandyTnt(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE)),
+            CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+    //-------------
+//    BlockEntities
     public static final RegistryObject<CandyMobExtractorBlock> CANDY_MOB_EXTRACTOR = registerBlockWithItem(
             "candy_mob_extractor",
             () -> new CandyMobExtractorBlock(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE)),
             CreativeModeTab.TAB_BUILDING_BLOCKS);
 
 
-    public static final RegistryObject<CandyTnt> CANDY_TNT = registerBlockWithItem(
-            "candy_tnt",
-            () -> new CandyTnt(BlockBehaviour.Properties.copy(Blocks.GLOWSTONE)),
-            CreativeModeTab.TAB_BUILDING_BLOCKS);
-
+    //Decoration----------------------
     public static final RegistryObject<LyingCandies> LYING_CANDIES =
             registerBlock("lying_candies", () -> new LyingCandies(BlockBehaviour.Properties.of(Material.CAKE).instabreak().noCollission()));
+
+
+    //Fluid Blocks------------------------
+    @SuppressWarnings("all")
+    public static final RegistryObject<LiquidBlock> CHOCOLATE_BLOCK = registerBlock("chocolate_block", () ->
+            new LiquidBlock(() -> FluidInit.CHOCOLATE.get(), BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100.0F).noDrops()));
+
 
     private static <T extends Block> RegistryObject<T> registerBlockWithItem(String name, Supplier<T> supplier, CreativeModeTab tab) {
         RegistryObject<T> block = BLOCKS.register(name, supplier);
         Iteminit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
         return block;
     }
-
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> supplier) {
         return BLOCKS.register(name, supplier);
     }

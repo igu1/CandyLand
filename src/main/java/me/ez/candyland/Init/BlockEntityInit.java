@@ -1,6 +1,6 @@
 package me.ez.candyland.Init;
 
-import me.ez.candyland.Common.BlockEntities.CandyMobExtractorBlockEntity;
+import me.ez.candyland.Common.BlockEntities.CandyMobExtractor.CandyMobExtractorBlockEntity;
 import me.ez.candyland.Main;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;

@@ -1,19 +1,10 @@
 package me.ez.candyland.Events;
 
-import me.ez.candyland.Init.AttributeInit;
+import me.ez.candyland.Common.Entites.CandyCow.CandyCow;
+import me.ez.candyland.Init.LivingEntityInit;
 import me.ez.candyland.Main;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Registry;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.animal.Sheep;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.level.Explosion;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -28,7 +19,8 @@ public class AttributeEvents {
 
     @SubscribeEvent
     public static void registerAttributeForOurEntity(EntityAttributeCreationEvent e){
-        System.out.println("Registering Attributes");
-        // For Our Entity Entity
+        System.out.println("Creating Attributes");
+        // For Our Own Entity
+        e.put(LivingEntityInit.CANDY_COW.get(), CandyCow.createAttributes().build());
     }
 }

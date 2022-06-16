@@ -1,15 +1,15 @@
 package me.ez.candyland.Init;
 
 import me.ez.candyland.Common.Food.SmallFood;
+import me.ez.candyland.Common.Item.ChocolateBucket;
 import me.ez.candyland.Main;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Supplier;
 
 public class Iteminit {
 
@@ -51,11 +51,8 @@ public class Iteminit {
             () -> new Item(new Item.Properties()
                     .tab(CreativeModeTab.TAB_MISC))); //FROM CANDY CREEPER
 
-
-    //Used BlockItem
-//    public static final RegistryObject<BlockItem> COCO_CANDY_BUSH = ITEMS.register(
-//            "coco_candy_bush",
-//            () -> new BlockItem(Blockinit.COCO_CANDY_BUSH.get(),
-//                    new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
+    public static final RegistryObject<Item> CHOCOLATE_BUCKET =
+            ITEMS.register("chocolate_bucket",
+                    () -> new BucketItem(() -> FluidInit.CHOCOLATE.get() ,new Item.Properties()
+                            .tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
 }

@@ -1,4 +1,4 @@
-package me.ez.candyland.Common.BlockEntities;
+package me.ez.candyland.Common.BlockEntities.CandyMobExtractor;
 
 import me.ez.candyland.Common.AbstractContainerBlockEntity.AbstractContainerBlockEntity;
 import me.ez.candyland.Init.BlockEntityInit;
@@ -13,13 +13,9 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.ChestBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 
 import java.util.List;

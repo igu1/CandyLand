@@ -9,7 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class EntityInit {
+public class MiscEntityInit {
     public static final DeferredRegister<EntityType<?>> ENTITY = DeferredRegister.create(ForgeRegistries.ENTITIES, Main.MOD_ID);
 
     public static final RegistryObject<EntityType<CandyPrimedTnt>> CANDY_TNT =

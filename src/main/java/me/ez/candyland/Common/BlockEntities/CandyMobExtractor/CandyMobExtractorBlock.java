@@ -1,4 +1,4 @@
-package me.ez.candyland.Common.BlockEntities;
+package me.ez.candyland.Common.BlockEntities.CandyMobExtractor;
 
 import me.ez.candyland.Common.AbstractContainerBlockEntity.AbstractBlockEntityBlock;
 import me.ez.candyland.Init.BlockEntityInit;
@@ -6,7 +6,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;

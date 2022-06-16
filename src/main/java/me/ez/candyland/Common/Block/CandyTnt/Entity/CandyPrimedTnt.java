@@ -1,6 +1,6 @@
 package me.ez.candyland.Common.Block.CandyTnt.Entity;
 
-import me.ez.candyland.Init.EntityInit;
+import me.ez.candyland.Init.MiscEntityInit;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -22,7 +22,7 @@ public class CandyPrimedTnt extends Entity {
     private LivingEntity owner;
 
     public CandyPrimedTnt(Level level, double x, double y, double z, @Nullable LivingEntity entity) {
-        this(EntityInit.CANDY_TNT.get(), level);
+        this(MiscEntityInit.CANDY_TNT.get(), level);
         this.setPos(x, y, z);
         double d0 = level.random.nextDouble() * (double)((float)Math.PI * 2F);
         this.setDeltaMovement(-Math.sin(d0) * 0.02D, (double)0.2F, -Math.cos(d0) * 0.02D);

@@ -14,7 +14,6 @@ public class GenerateOre {
             ModOrePlacement.ORE_CANDY
     );
 
-    @SubscribeEvent
     public static void onBiomeLoading(final BiomeLoadingEvent e){
         e.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION)
                 .addAll(features);

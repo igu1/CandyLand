@@ -1,6 +1,6 @@
 package me.ez.candyland.Init;
 
-import me.ez.candyland.Common.BlockEntities.CandyMobExtractorContainer;
+import me.ez.candyland.Common.BlockEntities.CandyMobExtractor.CandyMobExtractorContainer;
 import me.ez.candyland.Main;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
